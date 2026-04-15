@@ -24,6 +24,7 @@
         <div class="rosetta-nav">
           <a class="masthead-link" href="./index.html">Playground</a>
           <a class="masthead-link" href="./story.html">숲속의 용사</a>
+          <a class="masthead-link" href="./changelog.html">Changelog</a>
           <a
             class="masthead-link masthead-link-primary"
             href="https://github.com/ziium/ziium"
@@ -242,7 +243,7 @@ puts total</code></pre>
       <section class="rosetta-section" id="conditionals">
         <div class="rosetta-section-head">
           <h2>4. 조건문</h2>
-          <p class="rosetta-description"><code>이면</code>은 if, 비교 조사(<code>보다 크면</code>)로 자연스럽게</p>
+          <p class="rosetta-description"><code>이면</code>은 if, 비교 조사(<code>보다 크면</code>)로 자연스럽게. <code>~고</code>로 한 줄 분기도</p>
         </div>
 
         <div class="rosetta-tabs" role="tablist">
@@ -330,6 +331,39 @@ end</code></pre>
   "합격"을 출력한다
 아니면
   "불합격"을 출력한다' disabled type="button">
+                Run
+              </button>
+              <pre class="rosetta-output" aria-live="polite"></pre>
+            </div>
+          </div>
+        </div>
+        <div class="rosetta-example">
+          <div class="rosetta-columns">
+            <div class="rosetta-col" data-lang="python">
+              <h3 class="rosetta-col-label">Python</h3>
+              <pre><code>def gcd(a, b):
+    return a if b == 0 else gcd(b, a % b)
+
+print(gcd(48, 18))</code></pre>
+            </div>
+            <div class="rosetta-col" data-lang="ruby">
+              <h3 class="rosetta-col-label">Ruby</h3>
+              <pre><code>def gcd(a, b)
+  b == 0 ? a : gcd(b, a % b)
+end
+
+puts gcd(48, 18)</code></pre>
+            </div>
+            <div class="rosetta-col rosetta-col-ziium" data-lang="ziium">
+              <h3 class="rosetta-col-label">지음</h3>
+              <pre><code>최대공약수 함수는 큰수, 작은수를 받아
+  작은수 == 0이면 큰수를 돌려주고 아니면 최대공약수(작은수, 큰수 % 작은수)를 돌려준다
+
+최대공약수(48, 18)를 출력한다</code></pre>
+              <button class="rosetta-run" data-source="최대공약수 함수는 큰수, 작은수를 받아
+  작은수 == 0이면 큰수를 돌려주고 아니면 최대공약수(작은수, 큰수 % 작은수)를 돌려준다
+
+최대공약수(48, 18)를 출력한다" disabled type="button">
                 Run
               </button>
               <pre class="rosetta-output" aria-live="polite"></pre>
@@ -504,12 +538,12 @@ puts result</code></pre>
               <pre><code>두배 함수는 숫자를 받아
   숫자 * 2를 돌려준다
 
-결과는 5로 두배이다
+결과는 5를 두배한 것이다
 결과를 출력한다</code></pre>
               <button class="rosetta-run" data-source="두배 함수는 숫자를 받아
   숫자 * 2를 돌려준다
 
-결과는 5로 두배이다
+결과는 5를 두배한 것이다
 결과를 출력한다" disabled type="button">
                 Run
               </button>
@@ -523,7 +557,7 @@ puts result</code></pre>
       <section class="rosetta-section" id="collections">
         <div class="rosetta-section-head">
           <h2>7. 리스트 & 레코드</h2>
-          <p class="rosetta-description"><code>의</code>는 속성 접근, <code>에 추가</code>는 메시지 전송</p>
+          <p class="rosetta-description"><code>의</code>는 속성 접근, <code>에 추가</code>는 메시지 전송, 인덱스 대입도 가능</p>
         </div>
 
         <div class="rosetta-tabs" role="tablist">
@@ -628,6 +662,34 @@ puts person[:주소][:동네]</code></pre>
 사람은 { 이름: "영희", 주소 }이다
 사람의 주소의 도시를 출력한다
 사람의 주소의 동네를 출력한다' disabled type="button">
+                Run
+              </button>
+              <pre class="rosetta-output" aria-live="polite"></pre>
+            </div>
+          </div>
+        </div>
+        <div class="rosetta-example">
+          <div class="rosetta-columns">
+            <div class="rosetta-col" data-lang="python">
+              <h3 class="rosetta-col-label">Python</h3>
+              <pre><code>nums = [10, 20, 30]
+nums[1] = 99
+print(nums[1])</code></pre>
+            </div>
+            <div class="rosetta-col" data-lang="ruby">
+              <h3 class="rosetta-col-label">Ruby</h3>
+              <pre><code>nums = [10, 20, 30]
+nums[1] = 99
+puts nums[1]</code></pre>
+            </div>
+            <div class="rosetta-col rosetta-col-ziium" data-lang="ziium">
+              <h3 class="rosetta-col-label">지음</h3>
+              <pre><code>숫자들은 [10, 20, 30]이다
+숫자들[1]을 99로 바꾼다
+숫자들[1]을 출력한다</code></pre>
+              <button class="rosetta-run" data-source="숫자들은 [10, 20, 30]이다
+숫자들[1]을 99로 바꾼다
+숫자들[1]을 출력한다" disabled type="button">
                 Run
               </button>
               <pre class="rosetta-output" aria-live="polite"></pre>
