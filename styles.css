@@ -862,3 +862,33 @@ body {
     font-size: 0.82rem;
   }
 }
+
+/* ==========================================================================
+   Syntax highlighting — zh-* classes (shared by rosetta + changelog)
+   ========================================================================== */
+
+.zh-kw {
+  color: #8f4310;
+  font-weight: 600;
+}
+
+.zh-pa {
+  color: #7a6b5d;
+}
+
+.zh-str {
+  color: #2e7d32;
+}
+
+.zh-num {
+  color: #1565c0;
+}
+
+.zh-op {
+  color: #6a4c93;
+}
+
+.zh-lit {
+  color: #1565c0;
+  font-weight: 600;
+}

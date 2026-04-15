@@ -1,4 +1,4 @@
-import init, { run_source_web } from "./pkg/ziium.js";
+import init, { run_source_web, highlight_web } from "./pkg/ziium.js";
 
 const wasmStatus = document.querySelector("#wasmStatus");
 const runButtons = [...document.querySelectorAll(".rosetta-run")];
@@ -13,6 +13,7 @@ async function main() {
       button.disabled = false;
     }
     bindRunButtons();
+    highlightZiiumBlocks();
   } catch (error) {
     wasmStatus.textContent = "WASM 로드 실패";
     wasmStatus.classList.add("is-error");
@@ -93,6 +94,16 @@ function bindTabs() {
           col.classList.toggle("is-active", col.dataset.lang === firstLang);
         }
       }
+    }
+  }
+}
+
+function highlightZiiumBlocks() {
+  const blocks = document.querySelectorAll(".rosetta-col-ziium pre > code");
+  for (const code of blocks) {
+    const source = code.textContent;
+    if (source.trim()) {
+      code.innerHTML = highlight_web(source);
     }
   }
 }
