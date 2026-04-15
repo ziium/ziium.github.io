@@ -1,0 +1,642 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <title>ziium — Rosetta Stone</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="halo halo-left"></div>
+    <div class="halo halo-right"></div>
+
+    <main class="page">
+      <header class="rosetta-header">
+        <p class="eyebrow">Language Comparison</p>
+        <h1 class="rosetta-title">Rosetta Stone</h1>
+        <p class="rosetta-lead">
+          Python / Ruby를 아는 개발자를 위한 지음 문법 레퍼런스.
+          지음 코드는 <strong>Run</strong> 버튼으로 바로 실행할 수 있습니다.
+        </p>
+        <div class="rosetta-nav">
+          <a class="masthead-link" href="./index.html">Playground</a>
+          <a class="masthead-link" href="./story.html">숲속의 용사</a>
+          <a
+            class="masthead-link masthead-link-primary"
+            href="https://github.com/ziium/ziium"
+            target="_blank"
+            rel="noreferrer"
+          >
+            GitHub 저장소
+          </a>
+        </div>
+        <div id="wasmStatus" class="rosetta-wasm-status">WASM 로딩 중...</div>
+      </header>
+
+      <!-- Section 1: 첫 출력 -->
+      <section class="rosetta-section" id="first-output">
+        <div class="rosetta-section-head">
+          <h2>1. 첫 출력</h2>
+          <p class="rosetta-description">지음에서 동사는 문장 끝에 온다 — 한국어처럼</p>
+        </div>
+
+        <div class="rosetta-tabs" role="tablist">
+          <button class="rosetta-tab is-active" data-lang="python" role="tab">Python</button>
+          <button class="rosetta-tab" data-lang="ruby" role="tab">Ruby</button>
+          <button class="rosetta-tab" data-lang="ziium" role="tab">지음</button>
+        </div>
+
+        <div class="rosetta-example">
+          <div class="rosetta-columns">
+            <div class="rosetta-col" data-lang="python">
+              <h3 class="rosetta-col-label">Python</h3>
+              <pre><code>print("안녕 여러분")</code></pre>
+            </div>
+            <div class="rosetta-col" data-lang="ruby">
+              <h3 class="rosetta-col-label">Ruby</h3>
+              <pre><code>puts "안녕 여러분"</code></pre>
+            </div>
+            <div class="rosetta-col rosetta-col-ziium" data-lang="ziium">
+              <h3 class="rosetta-col-label">지음</h3>
+              <pre><code>"안녕 여러분"을 출력한다.</code></pre>
+              <button class="rosetta-run" data-source='"안녕 여러분"을 출력한다.' disabled type="button">
+                Run
+              </button>
+              <pre class="rosetta-output" aria-live="polite"></pre>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 2: 변수 -->
+      <section class="rosetta-section" id="variables">
+        <div class="rosetta-section-head">
+          <h2>2. 변수</h2>
+          <p class="rosetta-description"><code>이다</code>는 불변(const), <code>넣는다</code>는 가변(let) — 재할당은 가변만 가능</p>
+        </div>
+
+        <div class="rosetta-tabs" role="tablist">
+          <button class="rosetta-tab is-active" data-lang="python" role="tab">Python</button>
+          <button class="rosetta-tab" data-lang="ruby" role="tab">Ruby</button>
+          <button class="rosetta-tab" data-lang="ziium" role="tab">지음</button>
+        </div>
+
+        <div class="rosetta-example">
+          <div class="rosetta-columns">
+            <div class="rosetta-col" data-lang="python">
+              <h3 class="rosetta-col-label">Python</h3>
+              <pre><code>name = "철수"
+print(name)</code></pre>
+            </div>
+            <div class="rosetta-col" data-lang="ruby">
+              <h3 class="rosetta-col-label">Ruby</h3>
+              <pre><code>name = "철수"
+puts name</code></pre>
+            </div>
+            <div class="rosetta-col rosetta-col-ziium" data-lang="ziium">
+              <h3 class="rosetta-col-label">지음</h3>
+              <pre><code>이름은 "철수"이다.
+이름을 출력한다.</code></pre>
+              <button class="rosetta-run" data-source='이름은 "철수"이다.
+이름을 출력한다.' disabled type="button">
+                Run
+              </button>
+              <pre class="rosetta-output" aria-live="polite"></pre>
+            </div>
+          </div>
+        </div>
+
+        <div class="rosetta-example">
+          <div class="rosetta-columns">
+            <div class="rosetta-col" data-lang="python">
+              <h3 class="rosetta-col-label">Python</h3>
+              <pre><code>area = 6 * 4
+half = area // 2
+print(area)
+print(half)</code></pre>
+            </div>
+            <div class="rosetta-col" data-lang="ruby">
+              <h3 class="rosetta-col-label">Ruby</h3>
+              <pre><code>area = 6 * 4
+half = area / 2
+puts area
+puts half</code></pre>
+            </div>
+            <div class="rosetta-col rosetta-col-ziium" data-lang="ziium">
+              <h3 class="rosetta-col-label">지음</h3>
+              <pre><code>넓이는 6 * 4이다
+반은 넓이 / 2이다
+넓이를 출력한다
+반을 출력한다</code></pre>
+              <button class="rosetta-run" data-source="넓이는 6 * 4이다
+반은 넓이 / 2이다
+넓이를 출력한다
+반을 출력한다" disabled type="button">
+                Run
+              </button>
+              <pre class="rosetta-output" aria-live="polite"></pre>
+            </div>
+          </div>
+        </div>
+
+        <div class="rosetta-example">
+          <div class="rosetta-columns">
+            <div class="rosetta-col" data-lang="python">
+              <h3 class="rosetta-col-label">Python</h3>
+              <pre><code>score = 10       # mutable by default
+score = score + 5
+print(score)</code></pre>
+            </div>
+            <div class="rosetta-col" data-lang="ruby">
+              <h3 class="rosetta-col-label">Ruby</h3>
+              <pre><code>score = 10       # mutable by default
+score = score + 5
+puts score</code></pre>
+            </div>
+            <div class="rosetta-col rosetta-col-ziium" data-lang="ziium">
+              <h3 class="rosetta-col-label">지음</h3>
+              <pre><code>점수에 10을 넣는다
+점수를 점수 + 5로 바꾼다
+점수를 출력한다</code></pre>
+              <button class="rosetta-run" data-source="점수에 10을 넣는다
+점수를 점수 + 5로 바꾼다
+점수를 출력한다" disabled type="button">
+                Run
+              </button>
+              <pre class="rosetta-output" aria-live="polite"></pre>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 3: 연산 -->
+      <section class="rosetta-section" id="operations">
+        <div class="rosetta-section-head">
+          <h2>3. 연산</h2>
+          <p class="rosetta-description">심볼(<code>+</code>)과 한국어(<code>더하기</code>)를 모두 쓸 수 있다</p>
+        </div>
+
+        <div class="rosetta-tabs" role="tablist">
+          <button class="rosetta-tab is-active" data-lang="python" role="tab">Python</button>
+          <button class="rosetta-tab" data-lang="ruby" role="tab">Ruby</button>
+          <button class="rosetta-tab" data-lang="ziium" role="tab">지음</button>
+        </div>
+
+        <div class="rosetta-example">
+          <div class="rosetta-columns">
+            <div class="rosetta-col" data-lang="python">
+              <h3 class="rosetta-col-label">Python</h3>
+              <pre><code>total = 7 + 8
+print(total)</code></pre>
+            </div>
+            <div class="rosetta-col" data-lang="ruby">
+              <h3 class="rosetta-col-label">Ruby</h3>
+              <pre><code>total = 7 + 8
+puts total</code></pre>
+            </div>
+            <div class="rosetta-col rosetta-col-ziium" data-lang="ziium">
+              <h3 class="rosetta-col-label">지음</h3>
+              <pre><code>합은 7 + 8이다
+합을 출력한다</code></pre>
+              <button class="rosetta-run" data-source="합은 7 + 8이다
+합을 출력한다" disabled type="button">
+                Run
+              </button>
+              <pre class="rosetta-output" aria-live="polite"></pre>
+            </div>
+          </div>
+        </div>
+
+        <div class="rosetta-example">
+          <div class="rosetta-columns">
+            <div class="rosetta-col" data-lang="python">
+              <h3 class="rosetta-col-label">Python</h3>
+              <pre><code># same as above — symbolic only
+total = 7 + 8
+print(total)</code></pre>
+            </div>
+            <div class="rosetta-col" data-lang="ruby">
+              <h3 class="rosetta-col-label">Ruby</h3>
+              <pre><code># same as above — symbolic only
+total = 7 + 8
+puts total</code></pre>
+            </div>
+            <div class="rosetta-col rosetta-col-ziium" data-lang="ziium">
+              <h3 class="rosetta-col-label">지음</h3>
+              <pre><code>합은 7 더하기 8이다
+합을 출력한다</code></pre>
+              <button class="rosetta-run" data-source="합은 7 더하기 8이다
+합을 출력한다" disabled type="button">
+                Run
+              </button>
+              <pre class="rosetta-output" aria-live="polite"></pre>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 4: 조건문 -->
+      <section class="rosetta-section" id="conditionals">
+        <div class="rosetta-section-head">
+          <h2>4. 조건문</h2>
+          <p class="rosetta-description"><code>이면</code>은 if, 비교 조사(<code>보다 크면</code>)로 자연스럽게</p>
+        </div>
+
+        <div class="rosetta-tabs" role="tablist">
+          <button class="rosetta-tab is-active" data-lang="python" role="tab">Python</button>
+          <button class="rosetta-tab" data-lang="ruby" role="tab">Ruby</button>
+          <button class="rosetta-tab" data-lang="ziium" role="tab">지음</button>
+        </div>
+
+        <div class="rosetta-example">
+          <div class="rosetta-columns">
+            <div class="rosetta-col" data-lang="python">
+              <h3 class="rosetta-col-label">Python</h3>
+              <pre><code>score = 85
+if score >= 90:
+    print("A")
+elif score >= 80:
+    print("B")
+else:
+    print("C")</code></pre>
+            </div>
+            <div class="rosetta-col" data-lang="ruby">
+              <h3 class="rosetta-col-label">Ruby</h3>
+              <pre><code>score = 85
+if score >= 90
+  puts "A"
+elsif score >= 80
+  puts "B"
+else
+  puts "C"
+end</code></pre>
+            </div>
+            <div class="rosetta-col rosetta-col-ziium" data-lang="ziium">
+              <h3 class="rosetta-col-label">지음</h3>
+              <pre><code>점수는 85이다
+점수 >= 90이면
+  "A"를 출력한다
+아니면
+  점수 >= 80이면
+    "B"를 출력한다
+  아니면
+    "C"를 출력한다</code></pre>
+              <button class="rosetta-run" data-source='점수는 85이다
+점수 >= 90이면
+  "A"를 출력한다
+아니면
+  점수 >= 80이면
+    "B"를 출력한다
+  아니면
+    "C"를 출력한다' disabled type="button">
+                Run
+              </button>
+              <pre class="rosetta-output" aria-live="polite"></pre>
+            </div>
+          </div>
+        </div>
+
+        <div class="rosetta-example">
+          <div class="rosetta-columns">
+            <div class="rosetta-col" data-lang="python">
+              <h3 class="rosetta-col-label">Python</h3>
+              <pre><code>score = 85
+if score > 60:
+    print("합격")
+else:
+    print("불합격")</code></pre>
+            </div>
+            <div class="rosetta-col" data-lang="ruby">
+              <h3 class="rosetta-col-label">Ruby</h3>
+              <pre><code>score = 85
+if score > 60
+  puts "합격"
+else
+  puts "불합격"
+end</code></pre>
+            </div>
+            <div class="rosetta-col rosetta-col-ziium" data-lang="ziium">
+              <h3 class="rosetta-col-label">지음</h3>
+              <pre><code>점수는 85이다
+점수가 60보다 크면
+  "합격"을 출력한다
+아니면
+  "불합격"을 출력한다</code></pre>
+              <button class="rosetta-run" data-source='점수는 85이다
+점수가 60보다 크면
+  "합격"을 출력한다
+아니면
+  "불합격"을 출력한다' disabled type="button">
+                Run
+              </button>
+              <pre class="rosetta-output" aria-live="polite"></pre>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 5: 반복문 -->
+      <section class="rosetta-section" id="loops">
+        <div class="rosetta-section-head">
+          <h2>5. 반복문</h2>
+          <p class="rosetta-description"><code>인 동안</code> — 조건이 참인 동안 반복</p>
+        </div>
+
+        <div class="rosetta-tabs" role="tablist">
+          <button class="rosetta-tab is-active" data-lang="python" role="tab">Python</button>
+          <button class="rosetta-tab" data-lang="ruby" role="tab">Ruby</button>
+          <button class="rosetta-tab" data-lang="ziium" role="tab">지음</button>
+        </div>
+
+        <div class="rosetta-example">
+          <div class="rosetta-columns">
+            <div class="rosetta-col" data-lang="python">
+              <h3 class="rosetta-col-label">Python</h3>
+              <pre><code>count = 3
+while count > 0:
+    print(count)
+    count -= 1
+print("시작!")</code></pre>
+            </div>
+            <div class="rosetta-col" data-lang="ruby">
+              <h3 class="rosetta-col-label">Ruby</h3>
+              <pre><code>count = 3
+while count > 0
+  puts count
+  count -= 1
+end
+puts "시작!"</code></pre>
+            </div>
+            <div class="rosetta-col rosetta-col-ziium" data-lang="ziium">
+              <h3 class="rosetta-col-label">지음</h3>
+              <pre><code>남은수에 3을 넣는다.
+
+남은수 > 0인 동안
+  남은수를 출력한다.
+  남은수를 남은수 - 1로 바꾼다.
+
+"시작!"을 출력한다.</code></pre>
+              <button class="rosetta-run" data-source='남은수에 3을 넣는다.
+
+남은수 > 0인 동안
+  남은수를 출력한다.
+  남은수를 남은수 - 1로 바꾼다.
+
+"시작!"을 출력한다.' disabled type="button">
+                Run
+              </button>
+              <pre class="rosetta-output" aria-live="polite"></pre>
+            </div>
+          </div>
+        </div>
+
+        <div class="rosetta-example">
+          <div class="rosetta-columns">
+            <div class="rosetta-col" data-lang="python">
+              <h3 class="rosetta-col-label">Python</h3>
+              <pre><code>fruits = ["사과", "바나나", "포도"]
+for i in range(len(fruits)):
+    print(fruits[i])</code></pre>
+            </div>
+            <div class="rosetta-col" data-lang="ruby">
+              <h3 class="rosetta-col-label">Ruby</h3>
+              <pre><code>fruits = ["사과", "바나나", "포도"]
+fruits.each { |f| puts f }</code></pre>
+            </div>
+            <div class="rosetta-col rosetta-col-ziium" data-lang="ziium">
+              <h3 class="rosetta-col-label">지음</h3>
+              <pre><code>과일들은 ["사과", "바나나", "포도"]이다
+차례에 0을 넣는다
+차례 < 과일들의 길이인 동안
+  과일들[차례]를 출력한다
+  차례를 차례 + 1로 바꾼다</code></pre>
+              <button class="rosetta-run" data-source='과일들은 ["사과", "바나나", "포도"]이다
+차례에 0을 넣는다
+차례 < 과일들의 길이인 동안
+  과일들[차례]를 출력한다
+  차례를 차례 + 1로 바꾼다' disabled type="button">
+                Run
+              </button>
+              <pre class="rosetta-output" aria-live="polite"></pre>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 6: 함수 -->
+      <section class="rosetta-section" id="functions">
+        <div class="rosetta-section-head">
+          <h2>6. 함수</h2>
+          <p class="rosetta-description">함수 정의도 한국어 어순: 이름 → 매개변수 → 본문</p>
+        </div>
+
+        <div class="rosetta-tabs" role="tablist">
+          <button class="rosetta-tab is-active" data-lang="python" role="tab">Python</button>
+          <button class="rosetta-tab" data-lang="ruby" role="tab">Ruby</button>
+          <button class="rosetta-tab" data-lang="ziium" role="tab">지음</button>
+        </div>
+
+        <div class="rosetta-example">
+          <div class="rosetta-columns">
+            <div class="rosetta-col" data-lang="python">
+              <h3 class="rosetta-col-label">Python</h3>
+              <pre><code>def factorial(n):
+    if n <= 1:
+        return 1
+    return n * factorial(n - 1)
+
+print(factorial(5))</code></pre>
+            </div>
+            <div class="rosetta-col" data-lang="ruby">
+              <h3 class="rosetta-col-label">Ruby</h3>
+              <pre><code>def factorial(n)
+  return 1 if n <= 1
+  n * factorial(n - 1)
+end
+
+puts factorial(5)</code></pre>
+            </div>
+            <div class="rosetta-col rosetta-col-ziium" data-lang="ziium">
+              <h3 class="rosetta-col-label">지음</h3>
+              <pre><code>팩토리얼 함수는 숫자를 받아
+  숫자 <= 1이면
+    1을 돌려준다
+  숫자 * 팩토리얼(숫자 - 1)을 돌려준다
+
+팩토리얼(5)를 출력한다</code></pre>
+              <button class="rosetta-run" data-source="팩토리얼 함수는 숫자를 받아
+  숫자 <= 1이면
+    1을 돌려준다
+  숫자 * 팩토리얼(숫자 - 1)을 돌려준다
+
+팩토리얼(5)를 출력한다" disabled type="button">
+                Run
+              </button>
+              <pre class="rosetta-output" aria-live="polite"></pre>
+            </div>
+          </div>
+        </div>
+
+        <div class="rosetta-example">
+          <div class="rosetta-columns">
+            <div class="rosetta-col" data-lang="python">
+              <h3 class="rosetta-col-label">Python</h3>
+              <pre><code>def double(n):
+    return n * 2
+
+result = double(5)
+print(result)</code></pre>
+            </div>
+            <div class="rosetta-col" data-lang="ruby">
+              <h3 class="rosetta-col-label">Ruby</h3>
+              <pre><code>def double(n)
+  n * 2
+end
+
+result = double(5)
+puts result</code></pre>
+            </div>
+            <div class="rosetta-col rosetta-col-ziium" data-lang="ziium">
+              <h3 class="rosetta-col-label">지음</h3>
+              <pre><code>두배 함수는 숫자를 받아
+  숫자 * 2를 돌려준다
+
+결과는 5로 두배이다
+결과를 출력한다</code></pre>
+              <button class="rosetta-run" data-source="두배 함수는 숫자를 받아
+  숫자 * 2를 돌려준다
+
+결과는 5로 두배이다
+결과를 출력한다" disabled type="button">
+                Run
+              </button>
+              <pre class="rosetta-output" aria-live="polite"></pre>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 7: 리스트 & 레코드 -->
+      <section class="rosetta-section" id="collections">
+        <div class="rosetta-section-head">
+          <h2>7. 리스트 & 레코드</h2>
+          <p class="rosetta-description"><code>의</code>는 속성 접근, <code>에 추가</code>는 메시지 전송</p>
+        </div>
+
+        <div class="rosetta-tabs" role="tablist">
+          <button class="rosetta-tab is-active" data-lang="python" role="tab">Python</button>
+          <button class="rosetta-tab" data-lang="ruby" role="tab">Ruby</button>
+          <button class="rosetta-tab" data-lang="ziium" role="tab">지음</button>
+        </div>
+
+        <div class="rosetta-example">
+          <div class="rosetta-columns">
+            <div class="rosetta-col" data-lang="python">
+              <h3 class="rosetta-col-label">Python</h3>
+              <pre><code>fruits = ["사과", "배"]
+fruits.append("감")
+
+print(len(fruits))
+print(fruits[2])</code></pre>
+            </div>
+            <div class="rosetta-col" data-lang="ruby">
+              <h3 class="rosetta-col-label">Ruby</h3>
+              <pre><code>fruits = ["사과", "배"]
+fruits.push("감")
+
+puts fruits.length
+puts fruits[2]</code></pre>
+            </div>
+            <div class="rosetta-col rosetta-col-ziium" data-lang="ziium">
+              <h3 class="rosetta-col-label">지음</h3>
+              <pre><code>과일들은 ["사과", "배"]이다.
+과일들에 "감" 추가.
+
+과일들의 길이를 출력한다.
+과일들[2]을 출력한다.</code></pre>
+              <button class="rosetta-run" data-source='과일들은 ["사과", "배"]이다.
+과일들에 "감" 추가.
+
+과일들의 길이를 출력한다.
+과일들[2]을 출력한다.' disabled type="button">
+                Run
+              </button>
+              <pre class="rosetta-output" aria-live="polite"></pre>
+            </div>
+          </div>
+        </div>
+
+        <div class="rosetta-example">
+          <div class="rosetta-columns">
+            <div class="rosetta-col" data-lang="python">
+              <h3 class="rosetta-col-label">Python</h3>
+              <pre><code>person = {"이름": "영희", "나이": 25}
+
+print(person["이름"])
+print(person["나이"])</code></pre>
+            </div>
+            <div class="rosetta-col" data-lang="ruby">
+              <h3 class="rosetta-col-label">Ruby</h3>
+              <pre><code>person = {이름: "영희", 나이: 25}
+
+puts person[:이름]
+puts person[:나이]</code></pre>
+            </div>
+            <div class="rosetta-col rosetta-col-ziium" data-lang="ziium">
+              <h3 class="rosetta-col-label">지음</h3>
+              <pre><code>사람은 { 이름: "영희", 나이: 25 }이다
+사람의 이름을 출력한다
+사람의 나이를 출력한다</code></pre>
+              <button class="rosetta-run" data-source='사람은 { 이름: "영희", 나이: 25 }이다
+사람의 이름을 출력한다
+사람의 나이를 출력한다' disabled type="button">
+                Run
+              </button>
+              <pre class="rosetta-output" aria-live="polite"></pre>
+            </div>
+          </div>
+        </div>
+
+        <div class="rosetta-example">
+          <div class="rosetta-columns">
+            <div class="rosetta-col" data-lang="python">
+              <h3 class="rosetta-col-label">Python</h3>
+              <pre><code>addr = {"도시": "서울", "동네": "강남"}
+person = {"이름": "영희", "주소": addr}
+
+print(person["주소"]["도시"])
+print(person["주소"]["동네"])</code></pre>
+            </div>
+            <div class="rosetta-col" data-lang="ruby">
+              <h3 class="rosetta-col-label">Ruby</h3>
+              <pre><code>addr = {도시: "서울", 동네: "강남"}
+person = {이름: "영희", 주소: addr}
+
+puts person[:주소][:도시]
+puts person[:주소][:동네]</code></pre>
+            </div>
+            <div class="rosetta-col rosetta-col-ziium" data-lang="ziium">
+              <h3 class="rosetta-col-label">지음</h3>
+              <pre><code>주소는 { 도시: "서울", 동네: "강남" }이다
+사람은 { 이름: "영희", 주소 }이다
+사람의 주소의 도시를 출력한다
+사람의 주소의 동네를 출력한다</code></pre>
+              <button class="rosetta-run" data-source='주소는 { 도시: "서울", 동네: "강남" }이다
+사람은 { 이름: "영희", 주소 }이다
+사람의 주소의 도시를 출력한다
+사람의 주소의 동네를 출력한다' disabled type="button">
+                Run
+              </button>
+              <pre class="rosetta-output" aria-live="polite"></pre>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="./rosetta.js"></script>
+  </body>
+</html>

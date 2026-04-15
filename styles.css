@@ -416,3 +416,284 @@ body {
     min-height: 96px;
   }
 }
+
+/* ==========================================================================
+   Rosetta Stone — 3-column comparison page
+   All classes prefixed with `rosetta-` to isolate from other pages.
+   ========================================================================== */
+
+.rosetta-header {
+  text-align: center;
+  margin-bottom: 36px;
+}
+
+.rosetta-title {
+  font-family: "Iowan Old Style", "AppleMyungjo", serif;
+  font-size: clamp(2.4rem, 6vw, 3.8rem);
+  line-height: 0.92;
+  letter-spacing: -0.03em;
+  margin: 8px 0 0;
+}
+
+.rosetta-lead {
+  max-width: 580px;
+  margin: 14px auto 0;
+  color: var(--muted);
+  line-height: 1.72;
+  font-size: 1rem;
+}
+
+.rosetta-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 18px;
+}
+
+.rosetta-wasm-status {
+  display: inline-block;
+  margin-top: 14px;
+  padding: 6px 16px;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent-strong);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.rosetta-wasm-status.is-ready {
+  background: rgba(76, 175, 80, 0.14);
+  color: #2e7d32;
+}
+
+.rosetta-wasm-status.is-error {
+  background: rgba(211, 47, 47, 0.12);
+  color: #c62828;
+}
+
+/* --- Section --- */
+
+.rosetta-section {
+  margin-bottom: 40px;
+}
+
+.rosetta-section-head {
+  margin-bottom: 16px;
+}
+
+.rosetta-section-head h2 {
+  font-family: "Iowan Old Style", "AppleMyungjo", serif;
+  font-size: 1.5rem;
+  line-height: 1.1;
+  margin: 0;
+}
+
+.rosetta-description {
+  margin: 6px 0 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.rosetta-description code {
+  background: rgba(255, 255, 255, 0.6);
+  padding: 1px 6px;
+  border-radius: 4px;
+  font-family: "IBM Plex Mono", "SFMono-Regular", monospace;
+  font-size: 0.88em;
+  color: var(--accent-strong);
+}
+
+/* --- Tabs (mobile/tablet only) --- */
+
+.rosetta-tabs {
+  display: none;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.rosetta-tab {
+  padding: 8px 16px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--paper-soft);
+  color: var(--muted);
+  font: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.rosetta-tab.is-active {
+  border-color: rgba(185, 93, 22, 0.38);
+  background: linear-gradient(135deg, #fff0d9, #ffdcb8);
+  color: var(--ink);
+}
+
+/* --- 3-column grid --- */
+
+.rosetta-example {
+  margin-bottom: 16px;
+}
+
+.rosetta-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 14px;
+  align-items: start;
+}
+
+.rosetta-col {
+  min-width: 0;
+  padding: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 18px;
+  background: var(--paper-strong);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 12px 32px rgba(82, 57, 35, 0.06);
+}
+
+.rosetta-col-ziium {
+  border-color: rgba(185, 93, 22, 0.18);
+  background:
+    linear-gradient(135deg, rgba(255, 241, 219, 0.6), rgba(255, 249, 241, 0.5)),
+    var(--paper-strong);
+}
+
+.rosetta-col-label {
+  margin: 0 0 8px;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.rosetta-col pre {
+  margin: 0;
+  padding: 12px;
+  border-radius: 12px;
+  background: rgba(255, 254, 251, 0.88);
+  border: 1px solid rgba(77, 58, 38, 0.08);
+  overflow-x: auto;
+}
+
+.rosetta-col code {
+  font-family: "IBM Plex Mono", "SFMono-Regular", monospace;
+  font-size: 0.86rem;
+  line-height: 1.6;
+  color: #2a231d;
+  white-space: pre;
+}
+
+/* --- Run button --- */
+
+.rosetta-run {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 10px;
+  padding: 7px 18px;
+  border: none;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--accent), #d97b1d);
+  color: #fff;
+  font: inherit;
+  font-size: 0.84rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(185, 93, 22, 0.2);
+  transition: transform 140ms ease, box-shadow 140ms ease, opacity 140ms ease;
+}
+
+.rosetta-run:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 24px rgba(185, 93, 22, 0.26);
+}
+
+.rosetta-run:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.rosetta-fallback-link {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 7px 18px;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent-strong);
+  font-size: 0.84rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.rosetta-fallback-link:hover {
+  text-decoration: underline;
+}
+
+/* --- Output --- */
+
+.rosetta-output {
+  margin: 10px 0 0;
+  padding: 10px 12px;
+  min-height: 28px;
+  border-radius: 10px;
+  background: rgba(255, 254, 251, 0.88);
+  border: 1px solid rgba(77, 58, 38, 0.08);
+  font-family: "IBM Plex Mono", "SFMono-Regular", monospace;
+  font-size: 0.84rem;
+  line-height: 1.55;
+  color: #2a231d;
+  white-space: pre-wrap;
+}
+
+.rosetta-output:empty {
+  display: none;
+}
+
+/* --- Responsive: tablet --- */
+
+@media (max-width: 1040px) {
+  .rosetta-tabs {
+    display: flex;
+  }
+
+  .rosetta-col-label {
+    display: none;
+  }
+
+  .rosetta-columns {
+    grid-template-columns: 1fr;
+  }
+
+  .rosetta-col {
+    display: none;
+  }
+
+  .rosetta-col.is-active {
+    display: block;
+  }
+}
+
+/* --- Responsive: mobile --- */
+
+@media (max-width: 720px) {
+  .rosetta-section-head h2 {
+    font-size: 1.3rem;
+  }
+
+  .rosetta-col {
+    padding: 14px;
+    border-radius: 16px;
+  }
+
+  .rosetta-col pre {
+    padding: 10px;
+    border-radius: 10px;
+  }
+
+  .rosetta-col code {
+    font-size: 0.82rem;
+  }
+}
