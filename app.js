@@ -1,4 +1,4 @@
-import init, { run_source_web } from "./pkg/ziium.js";
+import init, { run_source_web, highlight_web } from "./pkg/ziium.js";
 
 const demos = {
   hello: {
@@ -115,6 +115,9 @@ let playbackGeneration = 0;
 
 async function main() {
   await init();
+  for (const el of document.querySelectorAll(".syntax-example")) {
+    el.innerHTML = highlight_web(el.textContent);
+  }
   bindEvents();
   loadDemo(currentDemoId);
 }
