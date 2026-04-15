@@ -53,6 +53,7 @@ jobs:
           cp index.html styles.css app.js story.html story.js rosetta.html rosetta.js changelog.html _site/
           cp -r pkg _site/pkg
           cp -r ziium _site/ziium
+          cp -r og _site/og
           touch _site/.nojekyll
 
       - name: Upload Pages artifact
