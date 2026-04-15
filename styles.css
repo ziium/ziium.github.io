@@ -868,27 +868,27 @@ body {
    ========================================================================== */
 
 .zh-kw {
-  color: #8f4310;
+  color: #7c3aed;
   font-weight: 600;
 }
 
 .zh-pa {
-  color: #5c7a99;
+  color: #0891b2;
 }
 
 .zh-str {
-  color: #2e7d32;
+  color: #16a34a;
 }
 
 .zh-num {
-  color: #1565c0;
+  color: #ea580c;
 }
 
 .zh-op {
-  color: #6a4c93;
+  color: #64748b;
 }
 
 .zh-lit {
-  color: #1565c0;
+  color: #ea580c;
   font-weight: 600;
 }
