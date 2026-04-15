@@ -108,7 +108,10 @@
             <button id="runButton" class="run-button" type="button">실행</button>
           </div>
           <p id="demoSummary" class="panel-summary"></p>
-          <textarea id="editor" spellcheck="false" wrap="off"></textarea>
+          <div class="editor-wrap">
+            <pre id="editorHighlight" aria-hidden="true"><code></code></pre>
+            <textarea id="editor" spellcheck="false" wrap="off"></textarea>
+          </div>
         </div>
 
         <div class="panel panel-output">

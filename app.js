@@ -1,5 +1,7 @@
 import init, { run_source_web, highlight_web } from "./pkg/ziium.js";
 
+const editorHighlightCode = document.querySelector("#editorHighlight code");
+
 const demos = {
   hello: {
     title: "첫인사",
@@ -113,11 +115,21 @@ let currentDemoId = "hello";
 let animationTimer = null;
 let playbackGeneration = 0;
 
+function updateHighlight() {
+  editorHighlightCode.innerHTML = highlight_web(editor.value);
+}
+
 async function main() {
   await init();
   for (const el of document.querySelectorAll(".syntax-example")) {
     el.innerHTML = highlight_web(el.textContent);
   }
+  editor.addEventListener("input", updateHighlight);
+  editor.addEventListener("scroll", () => {
+    const pre = document.querySelector("#editorHighlight");
+    pre.scrollTop = editor.scrollTop;
+    pre.scrollLeft = editor.scrollLeft;
+  });
   bindEvents();
   loadDemo(currentDemoId);
 }
@@ -138,6 +150,7 @@ function loadDemo(demoId) {
   currentDemoId = demoId;
   const demo = demos[demoId];
   editor.value = demo.source;
+  updateHighlight();
   demoTitle.textContent = demo.title;
   demoSummary.textContent = demo.summary;
   output.textContent = "아직 실행하지 않았습니다.";

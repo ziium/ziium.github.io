@@ -5,6 +5,7 @@ const runButtons = [...document.querySelectorAll(".rosetta-run")];
 const sections = [...document.querySelectorAll(".rosetta-section")];
 
 async function main() {
+  highlightCodeBlocks();
   try {
     await init();
     wasmStatus.textContent = "WASM 준비 완료";
@@ -105,6 +106,42 @@ function highlightZiiumBlocks() {
     if (source.trim()) {
       code.innerHTML = highlight_web(source);
     }
+  }
+}
+
+function escapeHtml(text) {
+  return text.replace(/&/g, "&amp;").replace(/</g, "&lt;");
+}
+
+function highlightCode(source, kwRe) {
+  const pattern = new RegExp(
+    `(#[^\\n]*)|(\"(?:\\\\.|[^\"])*\"|'(?:\\\\.|[^'])*')|(${kwRe.source})|(\\b\\d+(?:\\.\\d+)?\\b)`,
+    "g",
+  );
+  let result = "";
+  let lastIndex = 0;
+  for (const m of source.matchAll(pattern)) {
+    result += escapeHtml(source.slice(lastIndex, m.index));
+    const [, cm, str, kw, num] = m;
+    if (cm) result += `<span class="zh-cm">${escapeHtml(cm)}</span>`;
+    else if (str) result += `<span class="zh-str">${escapeHtml(str)}</span>`;
+    else if (kw) result += `<span class="zh-kw">${escapeHtml(kw)}</span>`;
+    else if (num) result += `<span class="zh-num">${escapeHtml(num)}</span>`;
+    lastIndex = m.index + m[0].length;
+  }
+  result += escapeHtml(source.slice(lastIndex));
+  return result;
+}
+
+const PY_KW = /\b(def|if|elif|else|while|for|in|return|and|or|not|True|False|None|print|len|range)\b/;
+const RB_KW = /\b(def|if|elsif|else|while|end|return|do|puts)\b/;
+
+function highlightCodeBlocks() {
+  for (const code of document.querySelectorAll('.rosetta-col[data-lang="python"] pre > code')) {
+    code.innerHTML = highlightCode(code.textContent, PY_KW);
+  }
+  for (const code of document.querySelectorAll('.rosetta-col[data-lang="ruby"] pre > code')) {
+    code.innerHTML = highlightCode(code.textContent, RB_KW);
   }
 }
 

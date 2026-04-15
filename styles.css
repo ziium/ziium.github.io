@@ -322,6 +322,30 @@ body {
   font-family: "IBM Plex Mono", "SFMono-Regular", monospace;
 }
 
+.editor-wrap {
+  position: relative;
+  width: 100%;
+}
+
+#editorHighlight {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 18px;
+  border: 1px solid transparent;
+  border-radius: 20px;
+  background: transparent;
+  font-family: "IBM Plex Mono", "SFMono-Regular", monospace;
+  font-size: 0.92rem;
+  line-height: 1.58;
+  white-space: pre;
+  overflow: hidden;
+  pointer-events: none;
+}
+
 #editor {
   min-height: 540px;
   resize: vertical;
@@ -331,6 +355,8 @@ body {
   white-space: pre;
   overflow-wrap: normal;
   word-break: normal;
+  color: transparent;
+  caret-color: #2a231d;
 }
 
 #output,
@@ -891,4 +917,9 @@ body {
 .zh-lit {
   color: #ea580c;
   font-weight: 600;
+}
+
+.zh-cm {
+  color: #94a3b8;
+  font-style: italic;
 }
